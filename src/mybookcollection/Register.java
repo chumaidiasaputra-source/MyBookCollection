@@ -1,34 +1,12 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package mybookcollection;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.*;
-
-
-
-
-    void setVisible(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    void pack() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    void setLocationRelativeTo(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private static class logger {
-
-
-        public logger() {
-        }
-    }
 
 /**
  *
- * @author Rayhan Halim G
+ * @author izyan
  */
 public class Register extends javax.swing.JFrame {
     
@@ -38,8 +16,9 @@ public class Register extends javax.swing.JFrame {
      * Creates new form Register
      */
     public static String name;
-    public static String Username;
-    public static String Password;
+    public static String username;
+    public static String password;
+    
     public Register() {
         initComponents();
     }
@@ -53,171 +32,88 @@ public class Register extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtUser = new javax.swing.JTextField();
-        txtPass = new javax.swing.JTextField();
-        btRegis = new javax.swing.JButton();
-
-        jLabel4.setText("Username");
-
-        jLabel5.setText("Password");
-
-        jLabel6.setText("My Book Collection");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addComponent(jLabel6)))
-                .addContainerGap(204, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel6)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel4)
-                .addGap(67, 67, 67)
-                .addComponent(jLabel5)
-                .addContainerGap(103, Short.MAX_VALUE))
-        );
+        txtRegis = new javax.swing.JButton();
+        txtword = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Username");
+        jLabel1.setText("My book Collection");
 
-        jLabel2.setText("Password");
+        jLabel2.setText("Username");
 
-        jLabel3.setText("My Book Collection");
+        jLabel3.setText("Password");
 
-        txtUser.addActionListener(this::txtUserActionPerformed);
+        txtRegis.setText("Register");
+        txtRegis.addActionListener(this::txtRegisActionPerformed);
 
-        txtPass.addActionListener(this::txtPassActionPerformed);
-
-        btRegis.setText("Register");
-        btRegis.addActionListener(this::btRegisActionPerformed);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(txtUser)
-                            .addComponent(txtPass)
-                            .addComponent(btRegis, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE))))
-                .addContainerGap(52, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel3)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btRegis)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
+        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(192, 192, 192)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtRegis, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addComponent(txtName)
+                                .addComponent(jLabel3)
+                                .addComponent(txtword)))))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(txtword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(txtRegis)
+                .addGap(37, 37, 37))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUserActionPerformed
+    private void txtRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRegisActionPerformed
+        if(txtword.getText().equals(txtword.getText())) {
+   
+    username = txtName.getText();
+    password = txtword.getText();
 
-    private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPassActionPerformed
-
-    private void btRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRegisActionPerformed
-     // Ambil data dari text field
-        String username = txtUser.getText();
-        String password = new String(txtPass.getPassword());
-        
-        // Validasi input tidak boleh kosong
-        if (username.isEmpty() || password.isEmpty()) {
-            JOptionPane.showMessageDialog(this, 
-                "Username dan Password tidak boleh kosong!", 
-                "Validasi Error", 
-                JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        // Validasi panjang username minimal 4 karakter
-        if (username.length() < 4) {
-            JOptionPane.showMessageDialog(this, 
-                "Username minimal 4 karakter!", 
-                "Validasi Error", 
-                JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        // Validasi panjang password minimal 6 karakter
-        if (password.length() < 6) {
-            JOptionPane.showMessageDialog(this, 
-                "Password minimal 6 karakter!", 
-                "Validasi Error", 
-                JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        // TODO: Tambahkan kode untuk menyimpan data ke database
-        // Contoh: simpan ke database atau file
-        
-        // Tampilkan pesan sukses
-        JOptionPane.showMessageDialog(this, 
-            "Registrasi berhasil!\nUsername: " + username, 
-            "Success", 
-            JOptionPane.INFORMATION_MESSAGE);
-        
-        // Clear form setelah registrasi
-        txtUser.setText("");
-        txtPass.setText("");
-    }//GEN-LAST:event_btRegisActionPerformed
+    //go to login
+    Login lg = new Login();
+    lg.setVisible(true);
+    lg.pack();
+    lg.setLocationRelativeTo(null);
+    lg.setDefaultCloseOperation(Register.EXIT_ON_CLOSE);
+} else {
+    jLabel4.setText("The password doesn't match");
+}
+    }//GEN-LAST:event_txtRegisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,20 +139,14 @@ public class Register extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new Register().setVisible(true));
     }
-    
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btRegis;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtPass;
-    private javax.swing.JTextField txtUser;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JButton txtRegis;
+    private javax.swing.JTextField txtword;
     // End of variables declaration//GEN-END:variables
-
+}
