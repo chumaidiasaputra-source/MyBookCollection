@@ -16,11 +16,11 @@ public class MyBookCollection {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-   Register rg = new Register();
+   RegisterPage rg = new RegisterPage();
     rg.setVisible(true);
     rg.pack();
     rg.setLocationRelativeTo(null);
-    rg.setDefaultCloseOperation(Register.EXIT_ON_CLOSE);
+    rg.setDefaultCloseOperation(RegisterPage.EXIT_ON_CLOSE);
 }
 
     
