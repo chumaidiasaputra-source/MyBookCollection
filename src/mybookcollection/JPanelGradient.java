@@ -42,4 +42,5 @@ public class JPanelGradient extends JPanel {
         g2d.setPaint(gradient);
         g2d.fillRect(0, 0, getWidth(), getHeight());
     }
+    
 }
