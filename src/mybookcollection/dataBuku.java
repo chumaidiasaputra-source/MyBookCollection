@@ -8,14 +8,14 @@ package mybookcollection;
  *
  * @author riaastuti
  */
-public class MainPage extends javax.swing.JFrame {
+public class dataBuku extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainPage.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(dataBuku.class.getName());
 
     /**
      * Creates new form MainPage
      */
-    public MainPage() {
+    public dataBuku() {
         initComponents();
     }
 
@@ -28,14 +28,12 @@ public class MainPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton6 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        kembaliBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        ubahBtn = new javax.swing.JButton();
-        cariBtn = new javax.swing.JButton();
+        tambahBtn = new javax.swing.JButton();
+        hapuskurangiBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         bgtextmybookcollection = new javax.swing.JPanel();
@@ -45,11 +43,6 @@ public class MainPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton6.setFont(new java.awt.Font("Phosphate", 1, 14)); // NOI18N
-        jButton6.setText("EDIT");
-        jButton6.addActionListener(this::jButton6ActionPerformed);
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 80, 60, 20));
 
         jPanel1.setBackground(new java.awt.Color(153, 102, 0));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -80,26 +73,22 @@ public class MainPage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 160, 60));
 
-        jButton2.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(153, 0, 0));
-        jButton2.setText("KELUAR");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 440, -1, -1));
-
-        jButton5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jButton5.setText("PEMINJAMAN");
-        jButton5.addActionListener(this::jButton5ActionPerformed);
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
+        kembaliBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        kembaliBtn.setText("Kembali");
+        kembaliBtn.addActionListener(this::kembaliBtnActionPerformed);
+        getContentPane().add(kembaliBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(204, 153, 0));
 
-        ubahBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        ubahBtn.setForeground(new java.awt.Color(0, 102, 0));
-        ubahBtn.setText("UBAH");
-        ubahBtn.addActionListener(this::ubahBtnActionPerformed);
+        tambahBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        tambahBtn.setForeground(new java.awt.Color(0, 102, 0));
+        tambahBtn.setText("+TAMBAH");
+        tambahBtn.addActionListener(this::tambahBtnActionPerformed);
 
-        cariBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        cariBtn.setText("CARI");
+        hapuskurangiBtn.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
+        hapuskurangiBtn.setForeground(new java.awt.Color(204, 0, 0));
+        hapuskurangiBtn.setText("- HAPUS/KURANGI");
+        hapuskurangiBtn.addActionListener(this::hapuskurangiBtnActionPerformed);
 
         jTable1.setBackground(new java.awt.Color(255, 255, 153));
         jTable1.setFont(new java.awt.Font("Hoefler Text", 0, 10)); // NOI18N
@@ -122,14 +111,14 @@ public class MainPage extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(tambahBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hapuskurangiBtn)
+                .addContainerGap(381, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(ubahBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cariBtn)
-                        .addGap(0, 498, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2))
+                .addComponent(jScrollPane2)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -137,8 +126,8 @@ public class MainPage extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ubahBtn)
-                    .addComponent(cariBtn))
+                    .addComponent(tambahBtn)
+                    .addComponent(hapuskurangiBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
                 .addContainerGap())
@@ -150,11 +139,11 @@ public class MainPage extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Phosphate", 0, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 153, 0));
-        jLabel3.setText("MY BOOK");
+        jLabel3.setText("DATA");
 
         jLabel4.setFont(new java.awt.Font("Phosphate", 3, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("collection");
+        jLabel4.setText("SEMUA BUKU");
 
         javax.swing.GroupLayout bgtextmybookcollectionLayout = new javax.swing.GroupLayout(bgtextmybookcollection);
         bgtextmybookcollection.setLayout(bgtextmybookcollectionLayout);
@@ -162,74 +151,55 @@ public class MainPage extends javax.swing.JFrame {
             bgtextmybookcollectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgtextmybookcollectionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(bgtextmybookcollectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addComponent(jLabel3)
+                .addContainerGap(102, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgtextmybookcollectionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
         bgtextmybookcollectionLayout.setVerticalGroup(
             bgtextmybookcollectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgtextmybookcollectionLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(bgtextmybookcollection, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 220, 80));
 
         bgmainlibrary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bahanbgmainnetbeans.png"))); // NOI18N
         bgmainlibrary.setText("jLabel1");
-        getContentPane().add(bgmainlibrary, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 480));
+        getContentPane().add(bgmainlibrary, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void kembaliBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliBtnActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        MainPage rg = new MainPage();
+        rg.setVisible(true);
+        rg.pack();
+        rg.setLocationRelativeTo(null);
+        rg.setResizable(false);
+        
+        // TUTUP RegisterPage
+        this.dispose();
+    }//GEN-LAST:event_kembaliBtnActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel1MouseClicked
 
-    private void ubahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ubahBtnActionPerformed
+    private void tambahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahBtnActionPerformed
         // TODO add your handling code here:
-        dataBuku rg = new dataBuku();
-        rg.setVisible(true);
-        rg.pack();
-        rg.setLocationRelativeTo(null);
-        rg.setResizable(false);
-        
-        // TUTUP RegisterPage
-        this.dispose();
-    }//GEN-LAST:event_ubahBtnActionPerformed
+    }//GEN-LAST:event_tambahBtnActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void hapuskurangiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapuskurangiBtnActionPerformed
         // TODO add your handling code here:
-        form_user rg = new form_user();
-        rg.setVisible(true);
-        rg.pack();
-        rg.setLocationRelativeTo(null);
-        rg.setResizable(false);
-        
-        // TUTUP RegisterPage
-        this.dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        pinjam rg = new pinjam();
-        rg.setVisible(true);
-        rg.pack();
-        rg.setLocationRelativeTo(null);
-        rg.setResizable(false);
-        
-        // TUTUP RegisterPage
-        this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_hapuskurangiBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,16 +223,13 @@ public class MainPage extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new MainPage().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new dataBuku().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgmainlibrary;
     private javax.swing.JPanel bgtextmybookcollection;
-    private javax.swing.JButton cariBtn;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton hapuskurangiBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -270,6 +237,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton ubahBtn;
+    private javax.swing.JButton kembaliBtn;
+    private javax.swing.JButton tambahBtn;
     // End of variables declaration//GEN-END:variables
 }

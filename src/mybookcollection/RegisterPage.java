@@ -69,7 +69,7 @@ public class RegisterPage extends javax.swing.JFrame {
         jLabel2.setText("MY");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
-        bgperpus.setIcon(new javax.swing.ImageIcon("/Users/riaastuti/Downloads/bg netbeans.jpg")); // NOI18N
+        bgperpus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bg netbeans.png"))); // NOI18N
         bgperpus.setText("jLabel1");
         getContentPane().add(bgperpus, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 270, 310));
 
@@ -211,12 +211,16 @@ public class RegisterPage extends javax.swing.JFrame {
     lg.setVisible(true);
     lg.pack();
     lg.setLocationRelativeTo(null);
-    lg.setDefaultCloseOperation(RegisterPage.EXIT_ON_CLOSE);
-} else {
-    jLabel4.setText("The password doesn't match");
-}
+    lg.setResizable(false);
+    
+    // TUTUP RegisterPage
+    this.dispose();
+   
+    } else {
+        jLabel4.setText("The password doesn't match");
+    }
     }//GEN-LAST:event_daftarBtnActionPerformed
-
+    
     private void keluarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarBtnActionPerformed
         // TODO add your handling code here:
         System.exit(0);

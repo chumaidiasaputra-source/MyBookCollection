@@ -64,7 +64,7 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel4.setText("collection");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 180, 30));
 
-        bgperpus1.setIcon(new javax.swing.ImageIcon("/Users/riaastuti/Downloads/bg netbeans.jpg")); // NOI18N
+        bgperpus1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bg netbeans.png"))); // NOI18N
         bgperpus1.setText("jLabel1");
         getContentPane().add(bgperpus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 270, 310));
 
@@ -203,7 +203,10 @@ public class LoginPage extends javax.swing.JFrame {
         rg.setVisible(true);
         rg.pack();
         rg.setLocationRelativeTo(null);
-        rg.setDefaultCloseOperation(LoginPage.EXIT_ON_CLOSE);
+        rg.setResizable(false);
+        
+        // TUTUP RegisterPage
+        this.dispose();
     }
     else{
         jLabel1.setText("Your password or username is invalid");
@@ -221,7 +224,10 @@ public class LoginPage extends javax.swing.JFrame {
         rg.setVisible(true);
         rg.pack();
         rg.setLocationRelativeTo(null);
-        rg.setDefaultCloseOperation(LoginPage.EXIT_ON_CLOSE);
+        rg.setResizable(false);
+        
+        // TUTUP RegisterPage
+        this.dispose();
     }//GEN-LAST:event_kembaliBtnActionPerformed
 
     /**

@@ -20,6 +20,7 @@ public class MyBookCollection {
     rg.setVisible(true);
     rg.pack();
     rg.setLocationRelativeTo(null);
+    rg.setResizable(false);
     rg.setDefaultCloseOperation(RegisterPage.EXIT_ON_CLOSE);
 }
 
