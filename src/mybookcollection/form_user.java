@@ -159,7 +159,7 @@ public class form_user extends javax.swing.JFrame {
 
     private void berandaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaBtnActionPerformed
         // TODO add your handling code here:
-        MainPage rg = new MainPage();
+        dataUser1 rg = new dataUser1();
         rg.setVisible(true);
         rg.pack();
         rg.setLocationRelativeTo(null);

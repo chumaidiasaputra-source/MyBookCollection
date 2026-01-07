@@ -94,14 +94,14 @@ public class dataPeminjam extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Hoefler Text", 0, 10)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "NOMOR ID", "KODE", "PENERBIT", "PENGARANG", "TAHUN TERBIT", "Title 6"
+                "NOMOR ID", "NAMA", "KODE", "WAKTU TERAKHIR"
             }
         ));
         jScrollPane2.setViewportView(jTable1);

@@ -8,14 +8,14 @@ package mybookcollection;
  *
  * @author riaastuti
  */
-public class dataBuku extends javax.swing.JFrame {
+public class dataUser1 extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(dataBuku.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(dataUser1.class.getName());
 
     /**
      * Creates new form MainPage
      */
-    public dataBuku() {
+    public dataUser1() {
         initComponents();
     }
 
@@ -94,14 +94,14 @@ public class dataBuku extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Hoefler Text", 0, 10)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "JUDUL", "KODE", "PENERBIT", "PENGARANG", "TAHUN TERBIT", "LOKASI"
+                "NOMOR ID", "NAMA"
             }
         ));
         jScrollPane2.setViewportView(jTable1);
@@ -143,7 +143,7 @@ public class dataBuku extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Phosphate", 3, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("SEMUA BUKU");
+        jLabel4.setText("User");
 
         javax.swing.GroupLayout bgtextmybookcollectionLayout = new javax.swing.GroupLayout(bgtextmybookcollection);
         bgtextmybookcollection.setLayout(bgtextmybookcollectionLayout);
@@ -195,7 +195,7 @@ public class dataBuku extends javax.swing.JFrame {
 
     private void tambahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahBtnActionPerformed
         // TODO add your handling code here:
-        Form_buku rg = new Form_buku();
+        form_user rg = new form_user();
         rg.setVisible(true);
         rg.pack();
         rg.setLocationRelativeTo(null);
@@ -230,7 +230,7 @@ public class dataBuku extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new dataBuku().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new dataUser1().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

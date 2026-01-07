@@ -47,9 +47,9 @@ public class MainPage extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton6.setFont(new java.awt.Font("Phosphate", 1, 14)); // NOI18N
-        jButton6.setText("EDIT");
+        jButton6.setText("USER");
         jButton6.addActionListener(this::jButton6ActionPerformed);
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 80, 60, 20));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 100, 20));
 
         jPanel1.setBackground(new java.awt.Color(153, 102, 0));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -128,8 +128,8 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(ubahBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cariBtn)
-                        .addGap(0, 498, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -140,7 +140,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(ubahBtn)
                     .addComponent(cariBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -165,7 +165,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addGroup(bgtextmybookcollectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bgtextmybookcollectionLayout.setVerticalGroup(
             bgtextmybookcollectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,7 +209,7 @@ public class MainPage extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        form_user rg = new form_user();
+        dataUser1 rg = new dataUser1();
         rg.setVisible(true);
         rg.pack();
         rg.setLocationRelativeTo(null);
@@ -221,7 +221,7 @@ public class MainPage extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        pinjam rg = new pinjam();
+        dataPeminjam rg = new dataPeminjam();
         rg.setVisible(true);
         rg.pack();
         rg.setLocationRelativeTo(null);

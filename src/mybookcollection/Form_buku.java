@@ -290,7 +290,7 @@ public class Form_buku extends javax.swing.JFrame {
 
     private void berandaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaBtnActionPerformed
         // TODO add your handling code here:
-        MainPage rg = new MainPage();
+        dataBuku rg = new dataBuku();
         rg.setVisible(true);
         rg.pack();
         rg.setLocationRelativeTo(null);
