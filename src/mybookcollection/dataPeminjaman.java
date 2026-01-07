@@ -8,14 +8,14 @@ package mybookcollection;
  *
  * @author riaastuti
  */
-public class dataUser1 extends javax.swing.JFrame {
+public class dataPeminjaman extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(dataUser1.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(dataPeminjaman.class.getName());
 
     /**
      * Creates new form MainPage
      */
-    public dataUser1() {
+    public dataPeminjaman() {
         initComponents();
     }
 
@@ -59,32 +59,35 @@ public class dataUser1 extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(27, 27, 27)
                 .addComponent(jLabel1)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+                .addContainerGap(7, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 160, 60));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 160, 30));
 
-        kembaliBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        kembaliBtn.setText("Kembali");
+        kembaliBtn.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
+        kembaliBtn.setForeground(new java.awt.Color(204, 153, 0));
+        kembaliBtn.setText("BERANDA");
         kembaliBtn.addActionListener(this::kembaliBtnActionPerformed);
         getContentPane().add(kembaliBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(204, 153, 0));
 
+        tambahBtn.setBackground(new java.awt.Color(204, 255, 204));
         tambahBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         tambahBtn.setForeground(new java.awt.Color(0, 102, 0));
         tambahBtn.setText("+TAMBAH");
         tambahBtn.addActionListener(this::tambahBtnActionPerformed);
 
+        hapuskurangiBtn.setBackground(new java.awt.Color(255, 204, 204));
         hapuskurangiBtn.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
         hapuskurangiBtn.setForeground(new java.awt.Color(204, 0, 0));
         hapuskurangiBtn.setText("- HAPUS/KURANGI");
@@ -94,14 +97,14 @@ public class dataUser1 extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Hoefler Text", 0, 10)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "NOMOR ID", "NAMA"
+                "NOMOR ID", "NAMA", "KODE", "WAKTU TERAKHIR"
             }
         ));
         jScrollPane2.setViewportView(jTable1);
@@ -137,13 +140,13 @@ public class dataUser1 extends javax.swing.JFrame {
 
         bgtextmybookcollection.setBackground(new java.awt.Color(102, 51, 0));
 
-        jLabel3.setFont(new java.awt.Font("Phosphate", 0, 48)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("PT Serif", 0, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 153, 0));
         jLabel3.setText("DATA");
 
-        jLabel4.setFont(new java.awt.Font("Phosphate", 3, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("User");
+        jLabel4.setText("Peminjaman");
 
         javax.swing.GroupLayout bgtextmybookcollectionLayout = new javax.swing.GroupLayout(bgtextmybookcollection);
         bgtextmybookcollection.setLayout(bgtextmybookcollectionLayout);
@@ -152,23 +155,23 @@ public class dataUser1 extends javax.swing.JFrame {
             .addGroup(bgtextmybookcollectionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgtextmybookcollectionLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addComponent(jLabel4)
+                .addGap(38, 38, 38))
         );
         bgtextmybookcollectionLayout.setVerticalGroup(
             bgtextmybookcollectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgtextmybookcollectionLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        getContentPane().add(bgtextmybookcollection, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 220, 80));
+        getContentPane().add(bgtextmybookcollection, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 90));
 
         bgmainlibrary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bahanbgmainnetbeans.png"))); // NOI18N
         bgmainlibrary.setText("jLabel1");
@@ -195,13 +198,11 @@ public class dataUser1 extends javax.swing.JFrame {
 
     private void tambahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahBtnActionPerformed
         // TODO add your handling code here:
-        form_user rg = new form_user();
+        form_tambah_peminjam rg = new form_tambah_peminjam();
         rg.setVisible(true);
         rg.pack();
         rg.setLocationRelativeTo(null);
         rg.setResizable(false);
-        
-        this.dispose();
     }//GEN-LAST:event_tambahBtnActionPerformed
 
     private void hapuskurangiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapuskurangiBtnActionPerformed
@@ -230,7 +231,7 @@ public class dataUser1 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new dataUser1().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new dataPeminjaman().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

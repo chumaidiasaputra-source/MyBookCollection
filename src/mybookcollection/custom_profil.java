@@ -8,14 +8,14 @@ package mybookcollection;
  *
  * @author izyan
  */
-public class form_user extends javax.swing.JFrame {
+public class custom_profil extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(form_user.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(custom_profil.class.getName());
 
     /**
      * Creates new form form_user
      */
-    public form_user() {
+    public custom_profil() {
         initComponents();
     }
 
@@ -30,13 +30,10 @@ public class form_user extends javax.swing.JFrame {
 
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
         berandaBtn = new javax.swing.JButton();
         resetBtn1 = new javax.swing.JButton();
         resetBtn2 = new javax.swing.JButton();
@@ -67,42 +64,19 @@ public class form_user extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 90, 30));
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 102));
-
-        jLabel4.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 13)); // NOI18N
-        jLabel4.setText("NO. ID");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 90, 30));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 90, 30));
 
         jPanel1.setBackground(new java.awt.Color(153, 102, 0));
 
         jLabel1.setBackground(new java.awt.Color(204, 153, 0));
         jLabel1.setFont(new java.awt.Font("PT Serif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel1.setText("DATA ");
+        jLabel1.setText("PROFIL");
 
         jLabel2.setBackground(new java.awt.Color(204, 153, 0));
         jLabel2.setFont(new java.awt.Font("Serif", 2, 22)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("pengguna");
+        jLabel2.setText("pemilik perpus");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -124,9 +98,8 @@ public class form_user extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 290, 30));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 290, 30));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 290, 30));
 
         berandaBtn.setFont(new java.awt.Font("PT Serif", 3, 18)); // NOI18N
         berandaBtn.setForeground(new java.awt.Color(204, 153, 0));
@@ -143,7 +116,7 @@ public class form_user extends javax.swing.JFrame {
         resetBtn2.setBackground(new java.awt.Color(204, 255, 204));
         resetBtn2.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
         resetBtn2.setForeground(new java.awt.Color(0, 102, 0));
-        resetBtn2.setText("simpan");
+        resetBtn2.setText("SIMPAN");
         getContentPane().add(resetBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
 
         editBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
@@ -159,7 +132,7 @@ public class form_user extends javax.swing.JFrame {
 
     private void berandaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berandaBtnActionPerformed
         // TODO add your handling code here:
-        dataUser1 rg = new dataUser1();
+        MainPage rg = new MainPage();
         rg.setVisible(true);
         rg.pack();
         rg.setLocationRelativeTo(null);
@@ -191,7 +164,7 @@ public class form_user extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new form_user().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new custom_profil().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -200,13 +173,10 @@ public class form_user extends javax.swing.JFrame {
     private javax.swing.JButton editBtn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton resetBtn1;
     private javax.swing.JButton resetBtn2;
     // End of variables declaration//GEN-END:variables

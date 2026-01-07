@@ -49,19 +49,19 @@ public class LoginPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Phosphate", 0, 48)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Serif", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("MY");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Phosphate", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("book");
+        jLabel3.setText("BOOK");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 140, 100));
 
-        jLabel4.setFont(new java.awt.Font("Phosphate", 0, 30)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("PT Serif", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("collection");
+        jLabel4.setText("COLLECTION");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 180, 30));
 
         bgperpus1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bg netbeans.png"))); // NOI18N
@@ -74,23 +74,23 @@ public class LoginPage extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 102, 0));
 
-        jLabel5.setFont(new java.awt.Font("Academy Engraved LET", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("PT Serif", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("di aplikasi My Book Collection.");
 
-        jLabel6.setFont(new java.awt.Font("Academy Engraved LET", 0, 16)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("PT Serif", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Terima kasih sudah daftar");
 
-        jLabel10.setFont(new java.awt.Font("Academy Engraved LET", 0, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("PT Serif", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Silahkan Login");
+        jLabel10.setText("Silahkan Login...");
 
-        jLabel11.setFont(new java.awt.Font("Academy Engraved LET", 0, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("USERNAME");
 
-        jLabel12.setFont(new java.awt.Font("Academy Engraved LET", 0, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("PASSWORD");
 
@@ -98,11 +98,13 @@ public class LoginPage extends javax.swing.JFrame {
 
         passwordTextField.addActionListener(this::passwordTextFieldActionPerformed);
 
+        daftarBtn.setBackground(new java.awt.Color(204, 255, 204));
         daftarBtn.setFont(new java.awt.Font("Palatino", 1, 10)); // NOI18N
         daftarBtn.setForeground(new java.awt.Color(0, 102, 0));
         daftarBtn.setText("MASUK");
         daftarBtn.addActionListener(this::daftarBtnActionPerformed);
 
+        keluarBtn.setBackground(new java.awt.Color(255, 204, 204));
         keluarBtn.setFont(new java.awt.Font("Palatino", 3, 10)); // NOI18N
         keluarBtn.setForeground(new java.awt.Color(153, 0, 0));
         keluarBtn.setText("KELUAR");
@@ -123,21 +125,10 @@ public class LoginPage extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(daftarBtn))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel6))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel5)))
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -146,7 +137,16 @@ public class LoginPage extends javax.swing.JFrame {
                             .addComponent(passwordTextField)
                             .addComponent(usernameTextField)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel10))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(daftarBtn)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(kembaliBtn)
@@ -157,11 +157,11 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
@@ -173,13 +173,13 @@ public class LoginPage extends javax.swing.JFrame {
                 .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(daftarBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kembaliBtn)
                     .addComponent(keluarBtn))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 200, 310));

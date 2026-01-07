@@ -8,14 +8,14 @@ package mybookcollection;
  *
  * @author izyan
  */
-public class Form_buku extends javax.swing.JFrame {
+public class Form_tambah_buku extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Form_buku.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Form_tambah_buku.class.getName());
 
     /**
      * Creates new form form_user
      */
-    public Form_buku() {
+    public Form_tambah_buku() {
         initComponents();
     }
 
@@ -83,7 +83,7 @@ public class Form_buku extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 90, 30));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 90, 30));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 102));
 
@@ -106,10 +106,10 @@ public class Form_buku extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 90, 30));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 90, 30));
 
         pengarangTextField.addActionListener(this::pengarangTextFieldActionPerformed);
-        getContentPane().add(pengarangTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 290, 30));
+        getContentPane().add(pengarangTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 290, 30));
 
         pengarang.setBackground(new java.awt.Color(255, 255, 102));
 
@@ -134,10 +134,10 @@ public class Form_buku extends javax.swing.JFrame {
                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
         );
 
-        getContentPane().add(pengarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 90, -1));
+        getContentPane().add(pengarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 90, -1));
 
         penerbitTextField1.addActionListener(this::penerbitTextField1ActionPerformed);
-        getContentPane().add(penerbitTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 290, 30));
+        getContentPane().add(penerbitTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 290, 30));
 
         penerbit1.setBackground(new java.awt.Color(255, 255, 102));
 
@@ -162,10 +162,10 @@ public class Form_buku extends javax.swing.JFrame {
                 .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
         );
 
-        getContentPane().add(penerbit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 90, -1));
+        getContentPane().add(penerbit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 90, -1));
 
         penerbitTextField.addActionListener(this::penerbitTextFieldActionPerformed);
-        getContentPane().add(penerbitTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 290, 30));
+        getContentPane().add(penerbitTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 290, 30));
 
         penerbit.setBackground(new java.awt.Color(255, 255, 102));
 
@@ -190,10 +190,10 @@ public class Form_buku extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
         );
 
-        getContentPane().add(penerbit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 90, -1));
+        getContentPane().add(penerbit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 90, -1));
 
         penerbitTextField2.addActionListener(this::penerbitTextField2ActionPerformed);
-        getContentPane().add(penerbitTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 290, 30));
+        getContentPane().add(penerbitTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 290, 30));
 
         penerbit2.setBackground(new java.awt.Color(255, 255, 102));
 
@@ -218,14 +218,14 @@ public class Form_buku extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
         );
 
-        getContentPane().add(penerbit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 90, -1));
+        getContentPane().add(penerbit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 90, -1));
 
         jPanel1.setBackground(new java.awt.Color(153, 102, 0));
 
         jLabel1.setBackground(new java.awt.Color(204, 153, 0));
-        jLabel1.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel1.setText("DATA ");
+        jLabel1.setText("TAMBAH");
 
         jLabel2.setBackground(new java.awt.Color(204, 153, 0));
         jLabel2.setFont(new java.awt.Font("Serif", 2, 22)); // NOI18N
@@ -238,11 +238,9 @@ public class Form_buku extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,15 +251,15 @@ public class Form_buku extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, 70));
 
         jTextField1.addActionListener(this::jTextField1ActionPerformed);
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 290, 30));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 290, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 290, 30));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 290, 30));
 
         berandaBtn.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         berandaBtn.setForeground(new java.awt.Color(204, 153, 0));
-        berandaBtn.setText("Beranda");
+        berandaBtn.setText("Kembali");
         berandaBtn.addActionListener(this::berandaBtnActionPerformed);
         getContentPane().add(berandaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 120, -1));
 
@@ -274,12 +272,12 @@ public class Form_buku extends javax.swing.JFrame {
         resetBtn2.setBackground(new java.awt.Color(204, 255, 204));
         resetBtn2.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
         resetBtn2.setForeground(new java.awt.Color(0, 102, 0));
-        resetBtn2.setText("simpan");
-        getContentPane().add(resetBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, -1));
+        resetBtn2.setText("SIMPAN");
+        getContentPane().add(resetBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
 
         editBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
         editBtn1.setText("ubah");
-        getContentPane().add(editBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, -1, -1));
+        getContentPane().add(editBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, -1, -1));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bgmenuubahdatabuku.png"))); // NOI18N
         bg.setText("jLabel6");
@@ -358,7 +356,7 @@ public class Form_buku extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Form_buku().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Form_tambah_buku().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
