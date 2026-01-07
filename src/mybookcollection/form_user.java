@@ -95,12 +95,12 @@ public class form_user extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 102, 0));
 
         jLabel1.setBackground(new java.awt.Color(204, 153, 0));
-        jLabel1.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("PT Serif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("DATA ");
 
         jLabel2.setBackground(new java.awt.Color(204, 153, 0));
-        jLabel2.setFont(new java.awt.Font("Phosphate", 2, 22)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Serif", 2, 22)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("pengguna");
 
@@ -111,7 +111,7 @@ public class form_user extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -120,15 +120,15 @@ public class form_user extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 290, 30));
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 290, 30));
 
-        berandaBtn.setFont(new java.awt.Font("Phosphate", 3, 18)); // NOI18N
+        berandaBtn.setFont(new java.awt.Font("PT Serif", 3, 18)); // NOI18N
         berandaBtn.setForeground(new java.awt.Color(204, 153, 0));
         berandaBtn.setText("Beranda");
         berandaBtn.addActionListener(this::berandaBtnActionPerformed);

@@ -32,6 +32,22 @@ public class Form_buku extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        pengarangTextField = new javax.swing.JTextField();
+        pengarang = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        penerbitTextField1 = new javax.swing.JTextField();
+        penerbit1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        penerbitTextField = new javax.swing.JTextField();
+        penerbit = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        penerbitTextField2 = new javax.swing.JTextField();
+        penerbit2 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -92,17 +108,129 @@ public class Form_buku extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 90, 30));
 
+        pengarangTextField.addActionListener(this::pengarangTextFieldActionPerformed);
+        getContentPane().add(pengarangTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 290, 30));
+
+        pengarang.setBackground(new java.awt.Color(255, 255, 102));
+
+        jLabel7.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 12)); // NOI18N
+        jLabel7.setText("PENGARANG");
+
+        jTextField5.addActionListener(this::jTextField5ActionPerformed);
+
+        javax.swing.GroupLayout pengarangLayout = new javax.swing.GroupLayout(pengarang);
+        pengarang.setLayout(pengarangLayout);
+        pengarangLayout.setHorizontalGroup(
+            pengarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pengarangLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pengarangLayout.setVerticalGroup(
+            pengarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pengarangLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(pengarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 90, -1));
+
+        penerbitTextField1.addActionListener(this::penerbitTextField1ActionPerformed);
+        getContentPane().add(penerbitTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 290, 30));
+
+        penerbit1.setBackground(new java.awt.Color(255, 255, 102));
+
+        jLabel8.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 10)); // NOI18N
+        jLabel8.setText("TAHUN TERBIT");
+
+        jTextField6.addActionListener(this::jTextField6ActionPerformed);
+
+        javax.swing.GroupLayout penerbit1Layout = new javax.swing.GroupLayout(penerbit1);
+        penerbit1.setLayout(penerbit1Layout);
+        penerbit1Layout.setHorizontalGroup(
+            penerbit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(penerbit1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        penerbit1Layout.setVerticalGroup(
+            penerbit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(penerbit1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(penerbit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 90, -1));
+
+        penerbitTextField.addActionListener(this::penerbitTextFieldActionPerformed);
+        getContentPane().add(penerbitTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 290, 30));
+
+        penerbit.setBackground(new java.awt.Color(255, 255, 102));
+
+        jLabel6.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 13)); // NOI18N
+        jLabel6.setText("PENERBIT");
+
+        jTextField4.addActionListener(this::jTextField4ActionPerformed);
+
+        javax.swing.GroupLayout penerbitLayout = new javax.swing.GroupLayout(penerbit);
+        penerbit.setLayout(penerbitLayout);
+        penerbitLayout.setHorizontalGroup(
+            penerbitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(penerbitLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        penerbitLayout.setVerticalGroup(
+            penerbitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(penerbitLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(penerbit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 90, -1));
+
+        penerbitTextField2.addActionListener(this::penerbitTextField2ActionPerformed);
+        getContentPane().add(penerbitTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 290, 30));
+
+        penerbit2.setBackground(new java.awt.Color(255, 255, 102));
+
+        jLabel9.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 13)); // NOI18N
+        jLabel9.setText("LOKASI");
+
+        jTextField7.addActionListener(this::jTextField7ActionPerformed);
+
+        javax.swing.GroupLayout penerbit2Layout = new javax.swing.GroupLayout(penerbit2);
+        penerbit2.setLayout(penerbit2Layout);
+        penerbit2Layout.setHorizontalGroup(
+            penerbit2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(penerbit2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        penerbit2Layout.setVerticalGroup(
+            penerbit2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(penerbit2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(penerbit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 90, -1));
+
         jPanel1.setBackground(new java.awt.Color(153, 102, 0));
 
         jLabel1.setBackground(new java.awt.Color(204, 153, 0));
-        jLabel1.setFont(new java.awt.Font("Phosphate", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("DATA ");
 
         jLabel2.setBackground(new java.awt.Color(204, 153, 0));
-        jLabel2.setFont(new java.awt.Font("Phosphate", 2, 22)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Serif", 2, 22)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("pengguna");
+        jLabel2.setText("Buku");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,17 +238,18 @@ public class Form_buku extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -130,7 +259,7 @@ public class Form_buku extends javax.swing.JFrame {
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 290, 30));
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 290, 30));
 
-        berandaBtn.setFont(new java.awt.Font("Phosphate", 3, 18)); // NOI18N
+        berandaBtn.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         berandaBtn.setForeground(new java.awt.Color(204, 153, 0));
         berandaBtn.setText("Beranda");
         berandaBtn.addActionListener(this::berandaBtnActionPerformed);
@@ -140,21 +269,21 @@ public class Form_buku extends javax.swing.JFrame {
         resetBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
         resetBtn1.setForeground(new java.awt.Color(153, 0, 0));
         resetBtn1.setText("ATUR ULANG");
-        getContentPane().add(resetBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        getContentPane().add(resetBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
 
         resetBtn2.setBackground(new java.awt.Color(204, 255, 204));
         resetBtn2.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
         resetBtn2.setForeground(new java.awt.Color(0, 102, 0));
         resetBtn2.setText("simpan");
-        getContentPane().add(resetBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
+        getContentPane().add(resetBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, -1));
 
         editBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
         editBtn1.setText("ubah");
-        getContentPane().add(editBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
+        getContentPane().add(editBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, -1, -1));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bgmenuubahdatabuku.png"))); // NOI18N
         bg.setText("jLabel6");
-        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 220));
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -174,6 +303,38 @@ public class Form_buku extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void penerbitTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penerbitTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_penerbitTextFieldActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void pengarangTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pengarangTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pengarangTextFieldActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void penerbitTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penerbitTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_penerbitTextField1ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void penerbitTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penerbitTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_penerbitTextField2ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,11 +369,27 @@ public class Form_buku extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JPanel penerbit;
+    private javax.swing.JPanel penerbit1;
+    private javax.swing.JPanel penerbit2;
+    private javax.swing.JTextField penerbitTextField;
+    private javax.swing.JTextField penerbitTextField1;
+    private javax.swing.JTextField penerbitTextField2;
+    private javax.swing.JPanel pengarang;
+    private javax.swing.JTextField pengarangTextField;
     private javax.swing.JButton resetBtn1;
     private javax.swing.JButton resetBtn2;
     // End of variables declaration//GEN-END:variables
