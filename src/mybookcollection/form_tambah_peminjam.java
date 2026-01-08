@@ -37,6 +37,7 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -46,7 +47,6 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         resetBtn1 = new javax.swing.JButton();
         resetBtn2 = new javax.swing.JButton();
         editBtn1 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -125,7 +125,7 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 102));
 
         jLabel7.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 13)); // NOI18N
-        jLabel7.setText("WAKTU AKHIR");
+        jLabel7.setText("BATAS");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -144,6 +144,7 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 90, 30));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 290, 30));
 
         jPanel1.setBackground(new java.awt.Color(153, 102, 0));
 
@@ -203,7 +204,6 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         editBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
         editBtn1.setText("ubah");
         getContentPane().add(editBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 222, 290, 30));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bgmenuubahdatabuku.png"))); // NOI18N
         bg.setText("jLabel6");
@@ -253,7 +253,6 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
     private javax.swing.JButton berandaBtn;
     private javax.swing.JLabel bg;
     private javax.swing.JButton editBtn1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -268,6 +267,7 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JButton resetBtn1;
     private javax.swing.JButton resetBtn2;
     // End of variables declaration//GEN-END:variables
