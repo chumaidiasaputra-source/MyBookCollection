@@ -17,6 +17,11 @@ public class MainPage extends javax.swing.JFrame {
      */
     public MainPage() {
         initComponents();
+        if(CurrentUser.isLoggedIn()){
+            NAMALabel1.setText(CurrentUser.username);
+        } else {
+            NAMALabel1.setText("Guest");
+        }
     }
 
     /**
@@ -31,7 +36,7 @@ public class MainPage extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        NAMALabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -64,28 +69,28 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Anonymous123");
+        NAMALabel1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        NAMALabel1.setForeground(new java.awt.Color(255, 255, 255));
+        NAMALabel1.setText(CurrentUser.username);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1)
-                .addContainerGap(54, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NAMALabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addComponent(NAMALabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 200, 40));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 350, 40));
 
         jButton2.setBackground(new java.awt.Color(255, 204, 204));
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
@@ -205,11 +210,11 @@ public class MainPage extends javax.swing.JFrame {
 
     private void ubahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ubahBtnActionPerformed
         // TODO add your handling code here:
-        dataBuku rg = new dataBuku();
-        rg.setVisible(true);
-        rg.pack();
-        rg.setLocationRelativeTo(null);
-        rg.setResizable(false);
+        dataBuku db = new dataBuku();
+        db.setVisible(true);
+        db.pack();
+        db.setLocationRelativeTo(null);
+        db.setResizable(false);
         
         // TUTUP RegisterPage
         this.dispose();
@@ -217,11 +222,11 @@ public class MainPage extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        dataAnggota rg = new dataAnggota();
-        rg.setVisible(true);
-        rg.pack();
-        rg.setLocationRelativeTo(null);
-        rg.setResizable(false);
+        dataAnggota da = new dataAnggota();
+        da.setVisible(true);
+        da.pack();
+        da.setLocationRelativeTo(null);
+        da.setResizable(false);
         
         // TUTUP RegisterPage
         this.dispose();
@@ -229,11 +234,11 @@ public class MainPage extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        dataPeminjaman rg = new dataPeminjaman();
-        rg.setVisible(true);
-        rg.pack();
-        rg.setLocationRelativeTo(null);
-        rg.setResizable(false);
+        dataPeminjaman dp = new dataPeminjaman();
+        dp.setVisible(true);
+        dp.pack();
+        dp.setLocationRelativeTo(null);
+        dp.setResizable(false);
         
         // TUTUP RegisterPage
         this.dispose();
@@ -246,6 +251,8 @@ public class MainPage extends javax.swing.JFrame {
         rg.pack();
         rg.setLocationRelativeTo(null);
         rg.setResizable(false);
+        
+        this.dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
@@ -274,6 +281,7 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel NAMALabel1;
     private javax.swing.JLabel bgmainlibrary;
     private javax.swing.JPanel bgtextmybookcollection;
     private javax.swing.JButton cariBtn;
@@ -281,7 +289,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;

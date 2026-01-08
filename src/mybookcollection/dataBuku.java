@@ -16,9 +16,11 @@ public class dataBuku extends javax.swing.JFrame {
      * Creates new form MainPage
      */
     public dataBuku() {
-        initComponents();
+    initComponents();
+    if (CurrentUser.isLoggedIn()) {
+        NAMALabel1.setText(CurrentUser.username); // ✅ ini akan jalan!
     }
-
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,7 +31,7 @@ public class dataBuku extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        NAMALabel1 = new javax.swing.JLabel();
         kembaliBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         tambahBtn = new javax.swing.JButton();
@@ -51,27 +53,27 @@ public class dataBuku extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("username_profile");
+        NAMALabel1.setForeground(new java.awt.Color(255, 255, 255));
+        NAMALabel1.setText(CurrentUser.username);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addComponent(NAMALabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(NAMALabel1)
                 .addContainerGap(7, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 160, 30));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 410, 30));
 
         kembaliBtn.setFont(new java.awt.Font("Helvetica Neue", 3, 12)); // NOI18N
         kembaliBtn.setForeground(new java.awt.Color(204, 153, 0));
@@ -236,10 +238,10 @@ public class dataBuku extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel NAMALabel1;
     private javax.swing.JLabel bgmainlibrary;
     private javax.swing.JPanel bgtextmybookcollection;
     private javax.swing.JButton hapuskurangiBtn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;

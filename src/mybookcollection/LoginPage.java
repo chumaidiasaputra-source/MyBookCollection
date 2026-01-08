@@ -4,6 +4,8 @@
  */
 package mybookcollection;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author riaastuti
@@ -11,6 +13,8 @@ package mybookcollection;
 public class LoginPage extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginPage.class.getName());
+    
+    
 
     /**
      * Creates new form LoginPage
@@ -40,11 +44,11 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         usernameTextField = new javax.swing.JTextField();
-        passwordTextField = new javax.swing.JTextField();
         daftarBtn = new javax.swing.JToggleButton();
         keluarBtn = new javax.swing.JToggleButton();
         kembaliBtn = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,7 +72,6 @@ public class LoginPage extends javax.swing.JFrame {
         bgperpus1.setText("jLabel1");
         getContentPane().add(bgperpus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 270, 310));
 
-        bgperpus.setIcon(new javax.swing.ImageIcon("/Users/riaastuti/Downloads/bg netbeans.jpg")); // NOI18N
         bgperpus.setText("jLabel1");
         getContentPane().add(bgperpus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 300));
 
@@ -96,8 +99,6 @@ public class LoginPage extends javax.swing.JFrame {
 
         usernameTextField.addActionListener(this::usernameTextFieldActionPerformed);
 
-        passwordTextField.addActionListener(this::passwordTextFieldActionPerformed);
-
         daftarBtn.setBackground(new java.awt.Color(204, 255, 204));
         daftarBtn.setFont(new java.awt.Font("Palatino", 1, 10)); // NOI18N
         daftarBtn.setForeground(new java.awt.Color(0, 102, 0));
@@ -118,6 +119,8 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
+        jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -133,26 +136,28 @@ public class LoginPage extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(passwordTextField)
-                            .addComponent(usernameTextField)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(kembaliBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(keluarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel5)
-                                    .addComponent(jLabel10))
+                                    .addComponent(jLabel10)
+                                    .addComponent(daftarBtn))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(daftarBtn)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(kembaliBtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(keluarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(146, 146, 146)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,11 +174,14 @@ public class LoginPage extends javax.swing.JFrame {
                 .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel12)
-                .addGap(5, 5, 5)
-                .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(daftarBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -191,25 +199,51 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameTextFieldActionPerformed
 
-    private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordTextFieldActionPerformed
-
     private void daftarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daftarBtnActionPerformed
         // TODO add your handling code here:
-        if((usernameTextField.getText().equals(RegisterPage.username)) && passwordTextField.getText().equals(RegisterPage.password)){
-        //go to Register
-        MainPage rg = new MainPage();
-        rg.setVisible(true);
-        rg.pack();
-        rg.setLocationRelativeTo(null);
-        rg.setResizable(false);
-        
-        // TUTUP RegisterPage
-        this.dispose();
+        String username = usernameTextField.getText().trim();
+    String password = new String(jPasswordField1.getPassword()).trim();
+
+    if (username.isEmpty() || password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Username dan password tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
     }
-    else{
-        jLabel1.setText("Your password or username is invalid");
+
+    try {
+        java.io.File file = new java.io.File("users.txt");
+        if (!file.exists()) {
+            JOptionPane.showMessageDialog(this, "Belum ada user terdaftar!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        java.util.Scanner scanner = new java.util.Scanner(file);
+        boolean found = false;
+
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            String[] parts = line.split(":", 2);
+            if (parts.length == 2 && parts[0].equals(username) && parts[1].equals(password)) {
+                found = true;
+                break;
+            }
+        }
+        scanner.close();
+
+        if (found) {
+            JOptionPane.showMessageDialog(this, "Login berhasil!");
+            
+            CurrentUser.username = username;
+            
+            MainPage mp = new MainPage(); // ganti dengan halaman utama kamu
+            mp.setLocationRelativeTo(null);
+            mp.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Username atau password salah!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal membaca data user.", "Error", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_daftarBtnActionPerformed
 
@@ -229,6 +263,10 @@ public class LoginPage extends javax.swing.JFrame {
         // TUTUP RegisterPage
         this.dispose();
     }//GEN-LAST:event_kembaliBtnActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,9 +307,9 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JToggleButton keluarBtn;
     private javax.swing.JToggleButton kembaliBtn;
-    private javax.swing.JTextField passwordTextField;
     private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 }

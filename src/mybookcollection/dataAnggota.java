@@ -16,9 +16,13 @@ public class dataAnggota extends javax.swing.JFrame {
      * Creates new form MainPage
      */
     public dataAnggota() {
-        initComponents();
+    initComponents();
+    if (CurrentUser.isLoggedIn()) {
+        NAMALabel1.setText(CurrentUser.username); 
     }
+}
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,7 +33,7 @@ public class dataAnggota extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        NAMALabel1 = new javax.swing.JLabel();
         kembaliBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         tambahBtn = new javax.swing.JButton();
@@ -51,27 +55,27 @@ public class dataAnggota extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("username_profile");
+        NAMALabel1.setForeground(new java.awt.Color(255, 255, 255));
+        NAMALabel1.setText(CurrentUser.username);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NAMALabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(7, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(NAMALabel1)
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 160, 30));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 410, 30));
 
         kembaliBtn.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
         kembaliBtn.setForeground(new java.awt.Color(204, 153, 0));
@@ -233,10 +237,10 @@ public class dataAnggota extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel NAMALabel1;
     private javax.swing.JLabel bgmainlibrary;
     private javax.swing.JPanel bgtextmybookcollection;
     private javax.swing.JButton hapuskurangiBtn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;

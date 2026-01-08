@@ -4,6 +4,8 @@
  */
 package mybookcollection;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author izyan
@@ -17,7 +19,54 @@ public class custom_profil extends javax.swing.JFrame {
      */
     public custom_profil() {
         initComponents();
+        
+        if (CurrentUser.isLoggedIn()) {
+           jTextField1.setText(CurrentUser.username);
+        }
     }
+    
+    private void simpanUsernameBaru() {
+    String newUsername = jTextField1.getText().trim();
+
+    if (newUsername.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Username tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        // Update CurrentUser.username
+        CurrentUser.username = newUsername;
+
+        // Simpan ke file users.txt (update data user)
+        java.io.File file = new java.io.File("users.txt");
+        java.util.List<String> lines = java.nio.file.Files.readAllLines(file.toPath());
+        java.util.List<String> updatedLines = new java.util.ArrayList<>();
+
+        for (String line : lines) {
+            String[] parts = line.split(":", 2);
+            if (parts.length == 2 && parts[0].equals(newUsername)) {
+                // Ini baris lama — kita skip karena akan ditulis ulang
+                continue;
+            } else if (parts.length == 2 && parts[0].equals(CurrentUser.username)) {
+                // Ganti username lama dengan yang baru
+                updatedLines.add(newUsername + ":" + parts[1]);
+            } else {
+                updatedLines.add(line);
+            }
+        }
+
+        // Tulis ulang file
+        java.nio.file.Files.write(file.toPath(), updatedLines);
+
+        JOptionPane.showMessageDialog(this, "Username berhasil diubah!");
+
+        // Optional: Tutup form atau refresh halaman
+        this.dispose(); // tutup form
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal menyimpan perubahan.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,9 +84,8 @@ public class custom_profil extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         berandaBtn = new javax.swing.JButton();
-        resetBtn1 = new javax.swing.JButton();
-        resetBtn2 = new javax.swing.JButton();
-        editBtn1 = new javax.swing.JButton();
+        SimpanBtn2 = new javax.swing.JButton();
+        BatalBtn1 = new javax.swing.JButton();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,6 +147,8 @@ public class custom_profil extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, -1));
+
+        jTextField1.addActionListener(this::jTextField1ActionPerformed);
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 290, 30));
 
         berandaBtn.setFont(new java.awt.Font("PT Serif", 3, 18)); // NOI18N
@@ -107,21 +157,19 @@ public class custom_profil extends javax.swing.JFrame {
         berandaBtn.addActionListener(this::berandaBtnActionPerformed);
         getContentPane().add(berandaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 120, -1));
 
-        resetBtn1.setBackground(new java.awt.Color(255, 204, 204));
-        resetBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        resetBtn1.setForeground(new java.awt.Color(153, 0, 0));
-        resetBtn1.setText("ATUR ULANG");
-        getContentPane().add(resetBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        SimpanBtn2.setBackground(new java.awt.Color(204, 255, 204));
+        SimpanBtn2.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
+        SimpanBtn2.setForeground(new java.awt.Color(0, 102, 0));
+        SimpanBtn2.setText("SIMPAN");
+        SimpanBtn2.addActionListener(this::SimpanBtn2ActionPerformed);
+        getContentPane().add(SimpanBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
 
-        resetBtn2.setBackground(new java.awt.Color(204, 255, 204));
-        resetBtn2.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        resetBtn2.setForeground(new java.awt.Color(0, 102, 0));
-        resetBtn2.setText("SIMPAN");
-        getContentPane().add(resetBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
-
-        editBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        editBtn1.setText("ubah");
-        getContentPane().add(editBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
+        BatalBtn1.setBackground(new java.awt.Color(255, 51, 51));
+        BatalBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
+        BatalBtn1.setText("BATAL");
+        BatalBtn1.setAutoscrolls(true);
+        BatalBtn1.addActionListener(this::BatalBtn1ActionPerformed);
+        getContentPane().add(BatalBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bgmenuubahdatabuku.png"))); // NOI18N
         bg.setText("jLabel6");
@@ -141,6 +189,30 @@ public class custom_profil extends javax.swing.JFrame {
         // TUTUP RegisterPage
         this.dispose();
     }//GEN-LAST:event_berandaBtnActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void SimpanBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanBtn2ActionPerformed
+
+        // TODO add your handling code here:
+        simpanUsernameBaru();
+        
+        MainPage rg = new MainPage();
+        rg.setVisible(true);
+        rg.pack();
+        rg.setLocationRelativeTo(null);
+        rg.setResizable(false);
+        
+        // TUTUP RegisterPage
+        this.dispose();
+    }//GEN-LAST:event_SimpanBtn2ActionPerformed
+
+    private void BatalBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatalBtn1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_BatalBtn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,16 +240,15 @@ public class custom_profil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BatalBtn1;
+    private javax.swing.JButton SimpanBtn2;
     private javax.swing.JButton berandaBtn;
     private javax.swing.JLabel bg;
-    private javax.swing.JButton editBtn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton resetBtn1;
-    private javax.swing.JButton resetBtn2;
     // End of variables declaration//GEN-END:variables
 }
