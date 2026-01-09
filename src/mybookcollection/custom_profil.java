@@ -211,6 +211,13 @@ public class custom_profil extends javax.swing.JFrame {
 
     private void BatalBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatalBtn1ActionPerformed
         // TODO add your handling code here:
+        
+        MainPage rg = new MainPage();
+        rg.setVisible(true);
+        rg.pack();
+        rg.setLocationRelativeTo(null);
+        rg.setResizable(false);
+        
         this.dispose();
     }//GEN-LAST:event_BatalBtn1ActionPerformed
 
