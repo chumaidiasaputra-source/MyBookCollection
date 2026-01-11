@@ -328,13 +328,12 @@ public class Form_tambah_buku extends javax.swing.JFrame {
     private void SimpanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanBtnActionPerformed
         // TODO add your handling code here:
         String judul = JudulTextField.getText().trim();
-    String kode = KodeTextField.getText().trim();
-    String penerbit = penerbitTextField.getText().trim();
-    String pengarang = pengarangTextField.getText().trim();
-    String tahun = TahunTerbitTextField1.getText().trim();
-    String lokasi = LokasiTextField.getText().trim();
+        String kode = KodeTextField.getText().trim();
+        String penerbit = penerbitTextField.getText().trim();
+        String pengarang = pengarangTextField.getText().trim();
+        String tahun = TahunTerbitTextField1.getText().trim();
+        String lokasi = LokasiTextField.getText().trim();
 
-    // Validasi input
     if (judul.isEmpty() || kode.isEmpty() || penerbit.isEmpty() || 
         pengarang.isEmpty() || tahun.isEmpty() || lokasi.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Semua field harus diisi!", "Error", JOptionPane.ERROR_MESSAGE);

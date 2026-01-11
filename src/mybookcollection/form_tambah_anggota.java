@@ -4,6 +4,8 @@
  */
 package mybookcollection;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author izyan
@@ -35,12 +37,10 @@ public class form_tambah_anggota extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        NamaTextField = new javax.swing.JTextField();
+        IDTextField = new javax.swing.JTextField();
         berandaBtn = new javax.swing.JButton();
-        resetBtn1 = new javax.swing.JButton();
-        resetBtn2 = new javax.swing.JButton();
-        editBtn1 = new javax.swing.JButton();
+        SimpanBtn = new javax.swing.JButton();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -125,8 +125,8 @@ public class form_tambah_anggota extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 290, 30));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 290, 30));
+        getContentPane().add(NamaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 290, 30));
+        getContentPane().add(IDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 290, 30));
 
         berandaBtn.setFont(new java.awt.Font("PT Serif", 3, 18)); // NOI18N
         berandaBtn.setForeground(new java.awt.Color(204, 153, 0));
@@ -134,21 +134,12 @@ public class form_tambah_anggota extends javax.swing.JFrame {
         berandaBtn.addActionListener(this::berandaBtnActionPerformed);
         getContentPane().add(berandaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 120, -1));
 
-        resetBtn1.setBackground(new java.awt.Color(255, 204, 204));
-        resetBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        resetBtn1.setForeground(new java.awt.Color(153, 0, 0));
-        resetBtn1.setText("ATUR ULANG");
-        getContentPane().add(resetBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
-
-        resetBtn2.setBackground(new java.awt.Color(204, 255, 204));
-        resetBtn2.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        resetBtn2.setForeground(new java.awt.Color(0, 102, 0));
-        resetBtn2.setText("SIMPAN");
-        getContentPane().add(resetBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, -1, -1));
-
-        editBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        editBtn1.setText("ubah");
-        getContentPane().add(editBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, -1));
+        SimpanBtn.setBackground(new java.awt.Color(204, 255, 204));
+        SimpanBtn.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
+        SimpanBtn.setForeground(new java.awt.Color(0, 102, 0));
+        SimpanBtn.setText("SIMPAN");
+        SimpanBtn.addActionListener(this::SimpanBtnActionPerformed);
+        getContentPane().add(SimpanBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, -1, -1));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bgmenuubahdatabuku.png"))); // NOI18N
         bg.setText("jLabel6");
@@ -167,6 +158,43 @@ public class form_tambah_anggota extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_berandaBtnActionPerformed
+
+    private void SimpanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanBtnActionPerformed
+        // TODO add your handling code here:
+        String NomorIDstr = IDTextField.getText().trim();
+        String Nama = NamaTextField.getText().trim();
+        
+    if (NomorIDstr.isEmpty() || Nama.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Semua field harus diisi!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    double NomorID;
+    try {
+        NomorID = Double.parseDouble(NomorIDstr);
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Nomor ID harus berupa angka!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        java.io.FileWriter fw = new java.io.FileWriter("anggota.txt", true);
+        fw.write(NomorID + ";" + Nama + "\n");
+        fw.close();
+
+        JOptionPane.showMessageDialog(this, "Data anggota berhasil disimpan!");
+        
+        dataAnggota da = new dataAnggota();
+            da.setVisible(true);
+            da.setLocationRelativeTo(null);
+            this.dispose();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal menyimpan data anggota.", "Error", JOptionPane.ERROR_MESSAGE);
+           
+       }
+        
+    }//GEN-LAST:event_SimpanBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,9 +222,11 @@ public class form_tambah_anggota extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField IDTextField;
+    private javax.swing.JTextField NamaTextField;
+    private javax.swing.JButton SimpanBtn;
     private javax.swing.JButton berandaBtn;
     private javax.swing.JLabel bg;
-    private javax.swing.JButton editBtn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -204,9 +234,5 @@ public class form_tambah_anggota extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JButton resetBtn1;
-    private javax.swing.JButton resetBtn2;
     // End of variables declaration//GEN-END:variables
 }

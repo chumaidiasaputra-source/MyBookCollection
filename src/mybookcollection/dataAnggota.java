@@ -4,6 +4,8 @@
  */
 package mybookcollection;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author riaastuti
@@ -20,6 +22,7 @@ public class dataAnggota extends javax.swing.JFrame {
     if (CurrentUser.isLoggedIn()) {
         NAMALabel1.setText(CurrentUser.username); 
     }
+    loadDataAnggota();
 }
 
     
@@ -209,6 +212,7 @@ public class dataAnggota extends javax.swing.JFrame {
 
     private void hapuskurangiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapuskurangiBtnActionPerformed
         // TODO add your handling code here:
+        hapusDataAnggota();
     }//GEN-LAST:event_hapuskurangiBtnActionPerformed
 
     /**
@@ -235,6 +239,79 @@ public class dataAnggota extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new dataAnggota().setVisible(true));
     }
+    
+    private void loadDataAnggota() {
+    try {
+        java.io.File file = new java.io.File("anggota.txt");
+        
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+
+        javax.swing.table.DefaultTableModel model = 
+            (javax.swing.table.DefaultTableModel) jTable1.getModel();
+        
+        model.setRowCount(0);
+
+        java.util.Scanner scanner = new java.util.Scanner(file);
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine().trim();
+            if (line.isEmpty()) continue; 
+
+            String[] parts = line.split(";", -1);
+
+            if (parts.length == 2) {
+                model.addRow(parts); 
+            }
+        }
+        scanner.close();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal memuat data anggota.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
+    
+    private void hapusDataAnggota() {
+    int selectedRow = jTable1.getSelectedRow();
+    
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(this, "Pilih baris yang ingin dihapus!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    int confirm = JOptionPane.showConfirmDialog(this, "Yakin ingin menghapus data ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+    if (confirm != JOptionPane.YES_OPTION) {
+        return;
+    }
+
+    try {
+        String NomorID = (String) jTable1.getValueAt(selectedRow, 0);
+        String Nama = (String) jTable1.getValueAt(selectedRow, 1);
+
+        String dataToDelete = NomorID + ";" + Nama;
+
+        java.io.File file = new java.io.File("anggota.txt");
+        java.util.List<String> lines = java.nio.file.Files.readAllLines(file.toPath());
+        java.util.List<String> updatedLines = new java.util.ArrayList<>();
+
+        for (String line : lines) {
+            if (!line.trim().equals(dataToDelete)) {
+                updatedLines.add(line);
+            }
+        }
+
+        java.nio.file.Files.write(file.toPath(), updatedLines);
+
+        javax.swing.table.DefaultTableModel model = 
+            (javax.swing.table.DefaultTableModel) jTable1.getModel();
+        model.removeRow(selectedRow);
+
+        JOptionPane.showMessageDialog(this, "Data anggota berhasil dihapus!");
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal menghapus data anggota.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel NAMALabel1;

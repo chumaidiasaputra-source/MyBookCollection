@@ -25,3 +25,6 @@ Halim:209109
 Halim:12
 Halim:209109
 2:2
+s:s
+a:a
+a:a
