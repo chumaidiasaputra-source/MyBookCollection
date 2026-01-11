@@ -21,38 +21,6 @@ public class Form_tambah_buku extends javax.swing.JFrame {
         initComponents();
          
 }
-        
-    private void simpanDataBuku() {
-    String judul = JudulTextField.getText().trim();
-    String kode = KodeTextField.getText().trim();
-    String penerbit = penerbitTextField.getText().trim();
-    String pengarang = pengarangTextField.getText().trim();
-    String tahun = TahunTerbitTextField1.getText().trim();
-    String lokasi = LokasiTextField.getText().trim();
-
-    // Validasi input
-    if (judul.isEmpty() || kode.isEmpty() || penerbit.isEmpty() || 
-        pengarang.isEmpty() || tahun.isEmpty() || lokasi.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Semua field harus diisi!", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-
-    try {
-        java.io.FileWriter fw = new java.io.FileWriter("buku.txt", true);
-        fw.write(judul + ";" + kode + ";" + penerbit + ";" + pengarang + ";" + tahun + ";" + lokasi + "\n");
-        fw.close();
-
-        JOptionPane.showMessageDialog(this, "Data buku berhasil disimpan!");
-        
-        dataBuku db = new dataBuku();
-            db.setVisible(true);
-            this.dispose();
-
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Gagal menyimpan data buku.", "Error", JOptionPane.ERROR_MESSAGE);
-           
-       }
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -359,8 +327,36 @@ public class Form_tambah_buku extends javax.swing.JFrame {
 
     private void SimpanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanBtnActionPerformed
         // TODO add your handling code here:
-        simpanDataBuku();
-        this.dispose();
+        String judul = JudulTextField.getText().trim();
+    String kode = KodeTextField.getText().trim();
+    String penerbit = penerbitTextField.getText().trim();
+    String pengarang = pengarangTextField.getText().trim();
+    String tahun = TahunTerbitTextField1.getText().trim();
+    String lokasi = LokasiTextField.getText().trim();
+
+    // Validasi input
+    if (judul.isEmpty() || kode.isEmpty() || penerbit.isEmpty() || 
+        pengarang.isEmpty() || tahun.isEmpty() || lokasi.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Semua field harus diisi!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        java.io.FileWriter fw = new java.io.FileWriter("buku.txt", true);
+        fw.write(judul + ";" + kode + ";" + penerbit + ";" + pengarang + ";" + tahun + ";" + lokasi + "\n");
+        fw.close();
+
+        JOptionPane.showMessageDialog(this, "Data buku berhasil disimpan!");
+        
+        dataBuku db = new dataBuku();
+            db.setVisible(true);
+            db.setLocationRelativeTo(null);
+            this.dispose();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal menyimpan data buku.", "Error", JOptionPane.ERROR_MESSAGE);
+           
+       }
     }//GEN-LAST:event_SimpanBtnActionPerformed
 
     /**
