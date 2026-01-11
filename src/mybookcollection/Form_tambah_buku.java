@@ -4,6 +4,8 @@
  */
 package mybookcollection;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author izyan
@@ -17,8 +19,40 @@ public class Form_tambah_buku extends javax.swing.JFrame {
      */
     public Form_tambah_buku() {
         initComponents();
+         
+}
+        
+    private void simpanDataBuku() {
+    String judul = JudulTextField.getText().trim();
+    String kode = KodeTextField.getText().trim();
+    String penerbit = penerbitTextField.getText().trim();
+    String pengarang = pengarangTextField.getText().trim();
+    String tahun = TahunTerbitTextField1.getText().trim();
+    String lokasi = LokasiTextField.getText().trim();
+
+    // Validasi input
+    if (judul.isEmpty() || kode.isEmpty() || penerbit.isEmpty() || 
+        pengarang.isEmpty() || tahun.isEmpty() || lokasi.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Semua field harus diisi!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
     }
 
+    try {
+        java.io.FileWriter fw = new java.io.FileWriter("buku.txt", true);
+        fw.write(judul + ";" + kode + ";" + penerbit + ";" + pengarang + ";" + tahun + ";" + lokasi + "\n");
+        fw.close();
+
+        JOptionPane.showMessageDialog(this, "Data buku berhasil disimpan!");
+        
+        dataBuku db = new dataBuku();
+            db.setVisible(true);
+            this.dispose();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal menyimpan data buku.", "Error", JOptionPane.ERROR_MESSAGE);
+           
+       }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,7 +70,7 @@ public class Form_tambah_buku extends javax.swing.JFrame {
         pengarang = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
-        penerbitTextField1 = new javax.swing.JTextField();
+        TahunTerbitTextField1 = new javax.swing.JTextField();
         penerbit1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
@@ -44,19 +78,17 @@ public class Form_tambah_buku extends javax.swing.JFrame {
         penerbit = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        penerbitTextField2 = new javax.swing.JTextField();
+        LokasiTextField = new javax.swing.JTextField();
         penerbit2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        KodeTextField = new javax.swing.JTextField();
+        JudulTextField = new javax.swing.JTextField();
         berandaBtn = new javax.swing.JButton();
-        resetBtn1 = new javax.swing.JButton();
-        resetBtn2 = new javax.swing.JButton();
-        editBtn1 = new javax.swing.JButton();
+        SimpanBtn = new javax.swing.JButton();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -136,8 +168,8 @@ public class Form_tambah_buku extends javax.swing.JFrame {
 
         getContentPane().add(pengarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 90, -1));
 
-        penerbitTextField1.addActionListener(this::penerbitTextField1ActionPerformed);
-        getContentPane().add(penerbitTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 290, 30));
+        TahunTerbitTextField1.addActionListener(this::TahunTerbitTextField1ActionPerformed);
+        getContentPane().add(TahunTerbitTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 290, 30));
 
         penerbit1.setBackground(new java.awt.Color(255, 255, 102));
 
@@ -192,8 +224,8 @@ public class Form_tambah_buku extends javax.swing.JFrame {
 
         getContentPane().add(penerbit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 90, -1));
 
-        penerbitTextField2.addActionListener(this::penerbitTextField2ActionPerformed);
-        getContentPane().add(penerbitTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 290, 30));
+        LokasiTextField.addActionListener(this::LokasiTextFieldActionPerformed);
+        getContentPane().add(LokasiTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 290, 30));
 
         penerbit2.setBackground(new java.awt.Color(255, 255, 102));
 
@@ -253,9 +285,9 @@ public class Form_tambah_buku extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, 70));
 
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 290, 30));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 290, 30));
+        KodeTextField.addActionListener(this::KodeTextFieldActionPerformed);
+        getContentPane().add(KodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 290, 30));
+        getContentPane().add(JudulTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 290, 30));
 
         berandaBtn.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         berandaBtn.setForeground(new java.awt.Color(204, 153, 0));
@@ -263,21 +295,12 @@ public class Form_tambah_buku extends javax.swing.JFrame {
         berandaBtn.addActionListener(this::berandaBtnActionPerformed);
         getContentPane().add(berandaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 120, -1));
 
-        resetBtn1.setBackground(new java.awt.Color(255, 204, 204));
-        resetBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        resetBtn1.setForeground(new java.awt.Color(153, 0, 0));
-        resetBtn1.setText("ATUR ULANG");
-        getContentPane().add(resetBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
-
-        resetBtn2.setBackground(new java.awt.Color(204, 255, 204));
-        resetBtn2.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        resetBtn2.setForeground(new java.awt.Color(0, 102, 0));
-        resetBtn2.setText("SIMPAN");
-        getContentPane().add(resetBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
-
-        editBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        editBtn1.setText("ubah");
-        getContentPane().add(editBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, -1, -1));
+        SimpanBtn.setBackground(new java.awt.Color(204, 255, 204));
+        SimpanBtn.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
+        SimpanBtn.setForeground(new java.awt.Color(0, 102, 0));
+        SimpanBtn.setText("SIMPAN");
+        SimpanBtn.addActionListener(this::SimpanBtnActionPerformed);
+        getContentPane().add(SimpanBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bgmenuubahdatabuku.png"))); // NOI18N
         bg.setText("jLabel6");
@@ -294,13 +317,13 @@ public class Form_tambah_buku extends javax.swing.JFrame {
         rg.setLocationRelativeTo(null);
         rg.setResizable(false);
         
-        // TUTUP RegisterPage
+
         this.dispose();
     }//GEN-LAST:event_berandaBtnActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void KodeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KodeTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_KodeTextFieldActionPerformed
 
     private void penerbitTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penerbitTextFieldActionPerformed
         // TODO add your handling code here:
@@ -318,21 +341,27 @@ public class Form_tambah_buku extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void penerbitTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penerbitTextField1ActionPerformed
+    private void TahunTerbitTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TahunTerbitTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_penerbitTextField1ActionPerformed
+    }//GEN-LAST:event_TahunTerbitTextField1ActionPerformed
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
 
-    private void penerbitTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penerbitTextField2ActionPerformed
+    private void LokasiTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LokasiTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_penerbitTextField2ActionPerformed
+    }//GEN-LAST:event_LokasiTextFieldActionPerformed
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void SimpanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanBtnActionPerformed
+        // TODO add your handling code here:
+        simpanDataBuku();
+        this.dispose();
+    }//GEN-LAST:event_SimpanBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,9 +389,13 @@ public class Form_tambah_buku extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField JudulTextField;
+    private javax.swing.JTextField KodeTextField;
+    private javax.swing.JTextField LokasiTextField;
+    private javax.swing.JButton SimpanBtn;
+    private javax.swing.JTextField TahunTerbitTextField1;
     private javax.swing.JButton berandaBtn;
     private javax.swing.JLabel bg;
-    private javax.swing.JButton editBtn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -374,8 +407,6 @@ public class Form_tambah_buku extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
@@ -384,11 +415,7 @@ public class Form_tambah_buku extends javax.swing.JFrame {
     private javax.swing.JPanel penerbit1;
     private javax.swing.JPanel penerbit2;
     private javax.swing.JTextField penerbitTextField;
-    private javax.swing.JTextField penerbitTextField1;
-    private javax.swing.JTextField penerbitTextField2;
     private javax.swing.JPanel pengarang;
     private javax.swing.JTextField pengarangTextField;
-    private javax.swing.JButton resetBtn1;
-    private javax.swing.JButton resetBtn2;
     // End of variables declaration//GEN-END:variables
 }

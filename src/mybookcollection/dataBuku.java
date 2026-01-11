@@ -4,6 +4,8 @@
  */
 package mybookcollection;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author riaastuti
@@ -18,8 +20,10 @@ public class dataBuku extends javax.swing.JFrame {
     public dataBuku() {
     initComponents();
     if (CurrentUser.isLoggedIn()) {
-        NAMALabel1.setText(CurrentUser.username); // ✅ ini akan jalan!
+        NAMALabel1.setText(CurrentUser.username); 
     }
+    loadDataBuku();
+    
 }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -191,7 +195,6 @@ public class dataBuku extends javax.swing.JFrame {
         rg.setLocationRelativeTo(null);
         rg.setResizable(false);
         
-        // TUTUP RegisterPage
         this.dispose();
     }//GEN-LAST:event_kembaliBtnActionPerformed
 
@@ -206,10 +209,13 @@ public class dataBuku extends javax.swing.JFrame {
         rg.pack();
         rg.setLocationRelativeTo(null);
         rg.setResizable(false);
+        
+        this.dispose();
     }//GEN-LAST:event_tambahBtnActionPerformed
 
     private void hapuskurangiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapuskurangiBtnActionPerformed
         // TODO add your handling code here:
+        hapusDataBuku();
     }//GEN-LAST:event_hapuskurangiBtnActionPerformed
 
     /**
@@ -236,6 +242,83 @@ public class dataBuku extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new dataBuku().setVisible(true));
     }
+    
+    private void loadDataBuku() {
+    try {
+        java.io.File file = new java.io.File("buku.txt");
+        
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+
+        javax.swing.table.DefaultTableModel model = 
+            (javax.swing.table.DefaultTableModel) jTable1.getModel();
+        
+        model.setRowCount(0);
+
+        java.util.Scanner scanner = new java.util.Scanner(file);
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine().trim();
+            if (line.isEmpty()) continue; // lewati baris kosong
+
+            String[] parts = line.split(";", -1); // -1 agar tidak potong empty field
+
+            if (parts.length == 6) {
+                model.addRow(parts); // tambahkan ke tabel
+            }
+        }
+        scanner.close();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal memuat data buku.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
+    
+    private void hapusDataBuku() {
+    int selectedRow = jTable1.getSelectedRow();
+    
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(this, "Pilih baris yang ingin dihapus!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    int confirm = JOptionPane.showConfirmDialog(this, "Yakin ingin menghapus data ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+    if (confirm != JOptionPane.YES_OPTION) {
+        return;
+    }
+
+    try {
+        String judul = (String) jTable1.getValueAt(selectedRow, 0);
+        String kode = (String) jTable1.getValueAt(selectedRow, 1);
+        String penerbit = (String) jTable1.getValueAt(selectedRow, 2);
+        String pengarang = (String) jTable1.getValueAt(selectedRow, 3);
+        String tahun = (String) jTable1.getValueAt(selectedRow, 4);
+        String lokasi = (String) jTable1.getValueAt(selectedRow, 5);
+
+        String dataToDelete = judul + ";" + kode + ";" + penerbit + ";" + pengarang + ";" + tahun + ";" + lokasi;
+
+        java.io.File file = new java.io.File("buku.txt");
+        java.util.List<String> lines = java.nio.file.Files.readAllLines(file.toPath());
+        java.util.List<String> updatedLines = new java.util.ArrayList<>();
+
+        for (String line : lines) {
+            if (!line.trim().equals(dataToDelete)) {
+                updatedLines.add(line);
+            }
+        }
+
+        java.nio.file.Files.write(file.toPath(), updatedLines);
+
+        javax.swing.table.DefaultTableModel model = 
+            (javax.swing.table.DefaultTableModel) jTable1.getModel();
+        model.removeRow(selectedRow);
+
+        JOptionPane.showMessageDialog(this, "Data buku berhasil dihapus!");
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal menghapus data buku.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel NAMALabel1;

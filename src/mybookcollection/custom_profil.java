@@ -34,10 +34,8 @@ public class custom_profil extends javax.swing.JFrame {
     }
 
     try {
-        // Update CurrentUser.username
         CurrentUser.username = newUsername;
 
-        // Simpan ke file users.txt (update data user)
         java.io.File file = new java.io.File("users.txt");
         java.util.List<String> lines = java.nio.file.Files.readAllLines(file.toPath());
         java.util.List<String> updatedLines = new java.util.ArrayList<>();
@@ -45,23 +43,19 @@ public class custom_profil extends javax.swing.JFrame {
         for (String line : lines) {
             String[] parts = line.split(":", 2);
             if (parts.length == 2 && parts[0].equals(newUsername)) {
-                // Ini baris lama — kita skip karena akan ditulis ulang
                 continue;
             } else if (parts.length == 2 && parts[0].equals(CurrentUser.username)) {
-                // Ganti username lama dengan yang baru
                 updatedLines.add(newUsername + ":" + parts[1]);
             } else {
                 updatedLines.add(line);
             }
         }
 
-        // Tulis ulang file
         java.nio.file.Files.write(file.toPath(), updatedLines);
 
         JOptionPane.showMessageDialog(this, "Username berhasil diubah!");
 
-        // Optional: Tutup form atau refresh halaman
-        this.dispose(); // tutup form
+        this.dispose(); 
 
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Gagal menyimpan perubahan.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -186,7 +180,6 @@ public class custom_profil extends javax.swing.JFrame {
         rg.setLocationRelativeTo(null);
         rg.setResizable(false);
         
-        // TUTUP RegisterPage
         this.dispose();
     }//GEN-LAST:event_berandaBtnActionPerformed
 
@@ -205,7 +198,6 @@ public class custom_profil extends javax.swing.JFrame {
         rg.setLocationRelativeTo(null);
         rg.setResizable(false);
         
-        // TUTUP RegisterPage
         this.dispose();
     }//GEN-LAST:event_SimpanBtn2ActionPerformed
 

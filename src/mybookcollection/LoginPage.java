@@ -234,7 +234,7 @@ public class LoginPage extends javax.swing.JFrame {
             
             CurrentUser.username = username;
             
-            MainPage mp = new MainPage(); // ganti dengan halaman utama kamu
+            MainPage mp = new MainPage();
             mp.setLocationRelativeTo(null);
             mp.setVisible(true);
             this.dispose();
@@ -260,7 +260,6 @@ public class LoginPage extends javax.swing.JFrame {
         rg.setLocationRelativeTo(null);
         rg.setResizable(false);
         
-        // TUTUP RegisterPage
         this.dispose();
     }//GEN-LAST:event_kembaliBtnActionPerformed
 

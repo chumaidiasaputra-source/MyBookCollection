@@ -210,7 +210,6 @@ public class RegisterPage extends javax.swing.JFrame {
     }
 
     try {
-        // Simpan ke file users.txt (sederhana)
         java.io.FileWriter fw = new java.io.FileWriter("users.txt", true);
         fw.write(username + ":" + password + "\n");
         fw.close();
@@ -219,7 +218,7 @@ public class RegisterPage extends javax.swing.JFrame {
         LoginPage lp = new LoginPage();
         lp.setLocationRelativeTo(null);
         lp.setVisible(true);
-        this.dispose(); // tutup register
+        this.dispose(); 
 
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Gagal menyimpan data.", "Error", JOptionPane.ERROR_MESSAGE);

@@ -4,6 +4,8 @@
  */
 package mybookcollection;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author riaastuti
@@ -22,6 +24,7 @@ public class MainPage extends javax.swing.JFrame {
         } else {
             NAMALabel1.setText("Guest");
         }
+        loadDataBuku();
     }
 
     /**
@@ -216,7 +219,6 @@ public class MainPage extends javax.swing.JFrame {
         db.setLocationRelativeTo(null);
         db.setResizable(false);
         
-        // TUTUP RegisterPage
         this.dispose();
     }//GEN-LAST:event_ubahBtnActionPerformed
 
@@ -228,7 +230,6 @@ public class MainPage extends javax.swing.JFrame {
         da.setLocationRelativeTo(null);
         da.setResizable(false);
         
-        // TUTUP RegisterPage
         this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -240,7 +241,6 @@ public class MainPage extends javax.swing.JFrame {
         dp.setLocationRelativeTo(null);
         dp.setResizable(false);
         
-        // TUTUP RegisterPage
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -279,6 +279,37 @@ public class MainPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new MainPage().setVisible(true));
     }
+    
+    private void loadDataBuku() {
+    try {
+        java.io.File file = new java.io.File("buku.txt");
+        
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+
+        javax.swing.table.DefaultTableModel model = 
+            (javax.swing.table.DefaultTableModel) jTable1.getModel();
+        
+        model.setRowCount(0);
+
+        java.util.Scanner scanner = new java.util.Scanner(file);
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine().trim();
+            if (line.isEmpty()) continue;
+
+            String[] parts = line.split(";", -1);
+
+            if (parts.length == 6) {
+                model.addRow(parts);
+            }
+        }
+        scanner.close();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal memuat data buku.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel NAMALabel1;
