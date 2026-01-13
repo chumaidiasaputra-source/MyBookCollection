@@ -65,7 +65,7 @@ public class Form_tambah_buku extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 102));
 
         jLabel5.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 13)); // NOI18N
-        jLabel5.setText("KODE");
+        jLabel5.setText("KODE BUKU\n");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);

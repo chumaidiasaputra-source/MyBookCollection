@@ -113,7 +113,7 @@ public class dataBuku extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "JUDUL", "KODE", "PENERBIT", "PENGARANG", "TAHUN TERBIT", "LOKASI"
+                "JUDUL", "KODE BUKU", "PENERBIT", "PENGARANG", "TAHUN TERBIT", "LOKASI"
             }
         ));
         jScrollPane2.setViewportView(jTable1);

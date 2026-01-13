@@ -110,7 +110,7 @@ public class dataPeminjaman extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "NOMOR ID", "NAMA", "KODE", "WAKTU TERAKHIR"
+                "NOMOR ID", "NAMA", "KODE BUKU", "WAKTU TERAKHIR"
             }
         ));
         jScrollPane2.setViewportView(jTable1);

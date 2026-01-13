@@ -190,7 +190,7 @@
                   <Table columnCount="4" rowCount="5">
                     <Column editable="true" title="NOMOR ID" type="java.lang.Object"/>
                     <Column editable="true" title="NAMA" type="java.lang.Object"/>
-                    <Column editable="true" title="KODE" type="java.lang.Object"/>
+                    <Column editable="true" title="KODE BUKU" type="java.lang.Object"/>
                     <Column editable="true" title="WAKTU TERAKHIR" type="java.lang.Object"/>
                   </Table>
                 </Property>
