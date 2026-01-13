@@ -46,7 +46,7 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         resetBtn1 = new javax.swing.JButton();
         resetBtn2 = new javax.swing.JButton();
         editBtn1 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        WaktuAmbilDateChooser1 = new com.toedter.calendar.JDateChooser();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -203,7 +203,7 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         editBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
         editBtn1.setText("ubah");
         getContentPane().add(editBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 222, 290, 30));
+        getContentPane().add(WaktuAmbilDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 222, 290, 30));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bgmenuubahdatabuku.png"))); // NOI18N
         bg.setText("jLabel6");
@@ -250,10 +250,10 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser WaktuAmbilDateChooser1;
     private javax.swing.JButton berandaBtn;
     private javax.swing.JLabel bg;
     private javax.swing.JButton editBtn1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

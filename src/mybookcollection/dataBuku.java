@@ -23,6 +23,8 @@ public class dataBuku extends javax.swing.JFrame {
         NAMALabel1.setText(CurrentUser.username); 
     }
     loadDataBuku();
+    updateJumlahBuku();
+    
     
 }
     /**
@@ -42,6 +44,7 @@ public class dataBuku extends javax.swing.JFrame {
         hapuskurangiBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        JumlahBukuLabel2 = new javax.swing.JLabel();
         bgtextmybookcollection = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -115,6 +118,8 @@ public class dataBuku extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
+        JumlahBukuLabel2.setText("Jumlah Buku : 0");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -124,10 +129,12 @@ public class dataBuku extends javax.swing.JFrame {
                 .addComponent(tambahBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(hapuskurangiBtn)
-                .addContainerGap(381, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JumlahBukuLabel2)
+                .addGap(10, 10, 10))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -136,9 +143,10 @@ public class dataBuku extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tambahBtn)
-                    .addComponent(hapuskurangiBtn))
+                    .addComponent(hapuskurangiBtn)
+                    .addComponent(JumlahBukuLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -313,14 +321,22 @@ public class dataBuku extends javax.swing.JFrame {
             (javax.swing.table.DefaultTableModel) jTable1.getModel();
         model.removeRow(selectedRow);
 
+        updateJumlahBuku();
+        
         JOptionPane.showMessageDialog(this, "Data buku berhasil dihapus!");
 
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Gagal menghapus data buku.", "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
+    
+    private void updateJumlahBuku() {
+    int rowCount = jTable1.getRowCount();
+    JumlahBukuLabel2.setText("Jumlah Buku: " + rowCount);
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JumlahBukuLabel2;
     private javax.swing.JLabel NAMALabel1;
     private javax.swing.JLabel bgmainlibrary;
     private javax.swing.JPanel bgtextmybookcollection;
