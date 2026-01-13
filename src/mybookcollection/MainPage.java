@@ -44,7 +44,6 @@ public class MainPage extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         ubahBtn = new javax.swing.JButton();
-        cariBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         bgtextmybookcollection = new javax.swing.JPanel();
@@ -114,9 +113,6 @@ public class MainPage extends javax.swing.JFrame {
         ubahBtn.setText("UBAH");
         ubahBtn.addActionListener(this::ubahBtnActionPerformed);
 
-        cariBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        cariBtn.setText("CARI");
-
         jTable1.setBackground(new java.awt.Color(255, 255, 153));
         jTable1.setFont(new java.awt.Font("Hoefler Text", 0, 10)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -142,8 +138,6 @@ public class MainPage extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(ubahBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cariBtn)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE))
                 .addContainerGap())
@@ -152,9 +146,7 @@ public class MainPage extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ubahBtn)
-                    .addComponent(cariBtn))
+                .addComponent(ubahBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addContainerGap())
@@ -315,7 +307,6 @@ public class MainPage extends javax.swing.JFrame {
     public javax.swing.JLabel NAMALabel1;
     private javax.swing.JLabel bgmainlibrary;
     private javax.swing.JPanel bgtextmybookcollection;
-    private javax.swing.JButton cariBtn;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
