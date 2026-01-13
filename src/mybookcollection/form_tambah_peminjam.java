@@ -4,6 +4,10 @@
  */
 package mybookcollection;
 
+import javax.swing.JOptionPane;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author izyan
@@ -34,18 +38,16 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        KodeBukuTextField = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        NamaTextField = new javax.swing.JTextField();
+        IDTextField = new javax.swing.JTextField();
         berandaBtn = new javax.swing.JButton();
-        resetBtn1 = new javax.swing.JButton();
-        resetBtn2 = new javax.swing.JButton();
-        editBtn1 = new javax.swing.JButton();
+        SimpanBtn2 = new javax.swing.JButton();
         WaktuAmbilDateChooser1 = new com.toedter.calendar.JDateChooser();
         bg = new javax.swing.JLabel();
 
@@ -120,7 +122,9 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 90, 30));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 290, 30));
+
+        KodeBukuTextField.addActionListener(this::KodeBukuTextFieldActionPerformed);
+        getContentPane().add(KodeBukuTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 290, 30));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 102));
 
@@ -179,8 +183,8 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, 70));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 290, 30));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 290, 30));
+        getContentPane().add(NamaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 290, 30));
+        getContentPane().add(IDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 290, 30));
 
         berandaBtn.setFont(new java.awt.Font("PT Serif", 3, 18)); // NOI18N
         berandaBtn.setForeground(new java.awt.Color(204, 153, 0));
@@ -188,21 +192,12 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         berandaBtn.addActionListener(this::berandaBtnActionPerformed);
         getContentPane().add(berandaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 120, -1));
 
-        resetBtn1.setBackground(new java.awt.Color(255, 204, 204));
-        resetBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        resetBtn1.setForeground(new java.awt.Color(153, 0, 0));
-        resetBtn1.setText("ATUR ULANG");
-        getContentPane().add(resetBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
-
-        resetBtn2.setBackground(new java.awt.Color(204, 255, 204));
-        resetBtn2.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        resetBtn2.setForeground(new java.awt.Color(0, 102, 0));
-        resetBtn2.setText("SIMPAN");
-        getContentPane().add(resetBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, -1));
-
-        editBtn1.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
-        editBtn1.setText("ubah");
-        getContentPane().add(editBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
+        SimpanBtn2.setBackground(new java.awt.Color(204, 255, 204));
+        SimpanBtn2.setFont(new java.awt.Font("Helvetica Neue", 3, 13)); // NOI18N
+        SimpanBtn2.setForeground(new java.awt.Color(0, 102, 0));
+        SimpanBtn2.setText("SIMPAN");
+        SimpanBtn2.addActionListener(this::SimpanBtn2ActionPerformed);
+        getContentPane().add(SimpanBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, -1));
         getContentPane().add(WaktuAmbilDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 222, 290, 30));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mybookcollection/images/bgmenuubahdatabuku.png"))); // NOI18N
@@ -223,6 +218,48 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         // TUTUP RegisterPage
         this.dispose();
     }//GEN-LAST:event_berandaBtnActionPerformed
+
+    private void SimpanBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanBtn2ActionPerformed
+        // TODO add your handling code here:
+        String nomorIDstr = IDTextField.getText().trim();
+        String nama = NamaTextField.getText().trim();
+        String kodeBuku = KodeBukuTextField.getText().trim();
+        Date selectedDate = WaktuAmbilDateChooser1.getDate();
+        
+        if (selectedDate == null) {
+        JOptionPane.showMessageDialog(this, "Tanggal tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String tanggal = sdf.format(selectedDate);
+        
+         if (nomorIDstr.isEmpty() || nama.isEmpty() || kodeBuku.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Semua field harus diisi!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+       if (!validasiDataPeminjaman(nomorIDstr, nama, kodeBuku)) {
+        return;
+    }  
+        try {
+        java.io.FileWriter fw = new java.io.FileWriter("peminjaman.txt", true);
+        fw.write(nomorIDstr + ";" + nama + ";" + kodeBuku + ";" + tanggal + "\n");
+        fw.close();
+
+        JOptionPane.showMessageDialog(this, "Data peminjaman berhasil disimpan!");
+
+        dataPeminjaman dp = new dataPeminjaman();
+        dp.setVisible(true);
+        this.dispose();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal menyimpan data peminjaman.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+       
+    }//GEN-LAST:event_SimpanBtn2ActionPerformed
+
+    private void KodeBukuTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KodeBukuTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KodeBukuTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,12 +285,110 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new form_tambah_peminjam().setVisible(true));
     }
+    
+    private boolean validasiDataPeminjaman(String nomorIDstr, String nama, String kodeBuku) {
+    int NomorID;
+    try {
+        NomorID = Integer.parseInt(nomorIDstr);
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "NO. ID harus benar", "Error", JOptionPane.ERROR_MESSAGE);
+        return false;
+    }
+
+    boolean idDitemukan = false;
+    boolean namaSesuai = false;
+
+    try {
+        java.io.File fileAnggota = new java.io.File("anggota.txt");
+        if (!fileAnggota.exists()) {
+            JOptionPane.showMessageDialog(this, "File data anggota tidak ditemukan!", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        java.util.Scanner scanner = new java.util.Scanner(fileAnggota);
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine().trim();
+            if (line.isEmpty()) continue;
+
+            String[] parts = line.split(";", -1);
+            if (parts.length >= 2) {
+                try {
+                    int idFile = Integer.parseInt(parts[0]);
+                    String namaFile = parts[1];
+
+                    if (idFile == NomorID) {
+                        idDitemukan = true;
+                        if (namaFile.equals(nama)) {
+                            namaSesuai = true;
+                        }
+                        break;
+                    }
+                } catch (NumberFormatException ignored) {
+                }
+            }
+        }
+        scanner.close();
+
+        if (!idDitemukan) {
+            JOptionPane.showMessageDialog(this, "Tidak ada nomor ID tersebut di data anggota.", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        if (!namaSesuai) {
+            JOptionPane.showMessageDialog(this, "Nama tidak sesuai dengan nomor ID di data anggota.", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal membaca data anggota.", "Error", JOptionPane.ERROR_MESSAGE);
+        return false;
+    }
+
+    boolean kodeDitemukan = false;
+    try {
+        java.io.File fileBuku = new java.io.File("buku.txt");
+        if (!fileBuku.exists()) {
+            JOptionPane.showMessageDialog(this, "File data buku tidak ditemukan!", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        java.util.Scanner scanner = new java.util.Scanner(fileBuku);
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine().trim();
+            if (line.isEmpty()) continue;
+
+            String[] parts = line.split(";", -1);
+            if (parts.length >= 2) {
+                String kodeFile = parts[1]; // kolom ke-2 = kode buku
+                if (kodeFile.equals(kodeBuku)) {
+                    kodeDitemukan = true;
+                    break;
+                }
+            }
+        }
+        scanner.close();
+
+        if (!kodeDitemukan) {
+            JOptionPane.showMessageDialog(this, "Buku tidak ada di data buku.", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Gagal membaca data buku.", "Error", JOptionPane.ERROR_MESSAGE);
+        return false;
+    }
+
+    return true;
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField IDTextField;
+    private javax.swing.JTextField KodeBukuTextField;
+    private javax.swing.JTextField NamaTextField;
+    private javax.swing.JButton SimpanBtn2;
     private com.toedter.calendar.JDateChooser WaktuAmbilDateChooser1;
     private javax.swing.JButton berandaBtn;
     private javax.swing.JLabel bg;
-    private javax.swing.JButton editBtn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -265,10 +400,5 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JButton resetBtn1;
-    private javax.swing.JButton resetBtn2;
     // End of variables declaration//GEN-END:variables
 }

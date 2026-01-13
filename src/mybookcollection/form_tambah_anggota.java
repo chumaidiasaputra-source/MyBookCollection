@@ -169,9 +169,9 @@ public class form_tambah_anggota extends javax.swing.JFrame {
         return;
     }
     
-    double NomorID;
+    int NomorID;
     try {
-        NomorID = Double.parseDouble(NomorIDstr);
+        NomorID = Integer.parseInt(NomorIDstr);
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, "Nomor ID harus berupa angka!", "Error", JOptionPane.ERROR_MESSAGE);
         return;
