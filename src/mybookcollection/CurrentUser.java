@@ -9,7 +9,7 @@ package mybookcollection;
  * @author Rayhan Halim G
  */
 public class CurrentUser {
-    public static String username = ""; // simpan username yang login
+    public static String username = "";
 
     public static boolean isLoggedIn() {
         return !username.isEmpty();

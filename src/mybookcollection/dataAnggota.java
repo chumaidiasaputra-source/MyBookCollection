@@ -74,10 +74,7 @@ public class dataAnggota extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(7, Short.MAX_VALUE)
-                .addComponent(NAMALabel1)
-                .addContainerGap())
+            .addComponent(NAMALabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 410, 30));
@@ -201,7 +198,6 @@ public class dataAnggota extends javax.swing.JFrame {
         rg.setLocationRelativeTo(null);
         rg.setResizable(false);
         
-        // TUTUP RegisterPage
         this.dispose();
     }//GEN-LAST:event_kembaliBtnActionPerformed
 

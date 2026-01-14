@@ -215,7 +215,7 @@ public class form_tambah_peminjam extends javax.swing.JFrame {
         rg.setLocationRelativeTo(null);
         rg.setResizable(false);
         
-        // TUTUP RegisterPage
+     
         this.dispose();
     }//GEN-LAST:event_berandaBtnActionPerformed
 

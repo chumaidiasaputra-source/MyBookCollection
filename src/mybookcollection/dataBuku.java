@@ -74,10 +74,7 @@ public class dataBuku extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(NAMALabel1)
-                .addContainerGap(7, Short.MAX_VALUE))
+            .addComponent(NAMALabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 410, 30));
@@ -267,12 +264,12 @@ public class dataBuku extends javax.swing.JFrame {
         java.util.Scanner scanner = new java.util.Scanner(file);
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine().trim();
-            if (line.isEmpty()) continue; // lewati baris kosong
+            if (line.isEmpty()) continue; 
 
-            String[] parts = line.split(";", -1); // -1 agar tidak potong empty field
+            String[] parts = line.split(";", -1);
 
             if (parts.length == 6) {
-                model.addRow(parts); // tambahkan ke tabel
+                model.addRow(parts);
             }
         }
         scanner.close();

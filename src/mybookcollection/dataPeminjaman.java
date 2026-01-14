@@ -20,7 +20,7 @@ public class dataPeminjaman extends javax.swing.JFrame {
     public dataPeminjaman() {
     initComponents();
     if (CurrentUser.isLoggedIn()) {
-        NAMALabel1.setText(CurrentUser.username); // ✅ ini akan jalan!
+        NAMALabel1.setText(CurrentUser.username); 
     }
     loadDataPinjam();
 }
@@ -194,7 +194,7 @@ public class dataPeminjaman extends javax.swing.JFrame {
         rg.setLocationRelativeTo(null);
         rg.setResizable(false);
         
-        // TUTUP RegisterPage
+      
         this.dispose();
     }//GEN-LAST:event_kembaliBtnActionPerformed
 
@@ -259,12 +259,12 @@ public class dataPeminjaman extends javax.swing.JFrame {
         java.util.Scanner scanner = new java.util.Scanner(file);
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine().trim();
-            if (line.isEmpty()) continue; // lewati baris kosong
+            if (line.isEmpty()) continue; 
 
-            String[] parts = line.split(";", -1); // -1 agar tidak potong empty field
+            String[] parts = line.split(";", -1);
 
             if (parts.length == 4) {
-                model.addRow(parts); // tambahkan ke tabel
+                model.addRow(parts);
             }
         }
         scanner.close();
